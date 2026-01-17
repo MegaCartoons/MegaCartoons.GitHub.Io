@@ -79,12 +79,12 @@
     const searchForm = document.getElementById("searchForm");
     const searchBox = document.getElementById("searchBox");
 
-    // Handle form submission
     searchForm.addEventListener("submit", function(event) {
-      event.preventDefault(); // prevent default form submission
+      event.preventDefault(); // stop normal form submission
       const query = encodeURIComponent(searchBox.value.trim());
       if (query !== "") {
-        window.location.href = "?search=" + query;
+        // Open search results in a new tab pointing to /tv-shows/?search=...
+        window.open("/tv-shows/?search=" + query, "_blank");
       }
     });
   </script>
