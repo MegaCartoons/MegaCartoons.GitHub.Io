@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEGACARTOONS</title>
+
+  <!-- EXTERNAL STYLESHEET -->
+  <link rel="stylesheet" href="https://megacartoons.neocities.org/styles.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">MEGACARTOONS</div>
+
+    <nav style="display:flex; align-items:center; gap:20px;">
+      <a href="https://megacartoons.github.io/">Home</a>
+
+      <!-- SEARCH BOX -->
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Search..."
+        style="
+          padding:7px 12px;
+          border-radius:6px;
+          border:none;
+          outline:none;
+          font-size:14px;
+        "
+      />
+    </nav>
+  </header>
+
+  <!-- TRENDING -->
+  <section>
+    <div class="section-title">Trending Now</div>
+
+    <div class="row">
+      <div class="card">
+        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
+        <div class="card-title">Movie Title</div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
+        <div class="card-title">Movie Title</div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
+        <div class="card-title">Movie Title</div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
+        <div class="card-title">Movie Title</div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
+        <div class="card-title">Movie Title</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 StreamBox • Demo streaming platform UI<br />
+    Not affiliated with Netflix, Disney, or any real service.
+  </footer>
+
+  <!-- SEARCH SCRIPT -->
+  <script>
+    const searchBox = document.getElementById("searchBox");
+
+    searchBox.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = encodeURIComponent(searchBox.value.trim());
+        if (query !== "") {
+          window.location.href = "?search=" + query;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
