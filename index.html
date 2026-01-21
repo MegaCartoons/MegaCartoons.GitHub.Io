@@ -1,131 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MEGACARTOONS</title>
-  <link rel="stylesheet" href="https://megacartoons.neocities.org/styles.css">
-  <style>
-    /* Simple dropdown-style search results */
-    #searchResults {
-      position: absolute;
-      top: 50px; /* below navbar */
-      right: 20px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 250px;
-      max-height: 300px;
-      overflow-y: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 100;
-      padding: 10px;
-    }
-    #searchResults p {
-      margin: 5px 0;
-      cursor: pointer;
-    }
-    #searchResults p:hover {
-      background: #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="https://s125.vidcache.net:8166/static/3a5088b3434e51f5007f4ab4d059c4fa862ca456/MEGACARTOONS.css">
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header style="position:relative;">
-    <div class="logo">MEGACARTOONS</div>
-
-    <nav style="display:flex; align-items:center; gap:20px; position:relative;">
-      <a href="https://megacartoons.github.io/">Home</a>
-
-      <!-- SEARCH BOX -->
-      <form id="searchForm" style="display:inline;">
-        <input
-          type="text"
-          id="searchBox"
-          placeholder="Search..."
-          style="padding:7px 12px; border-radius:6px; border:none; outline:none; font-size:14px;"
-        />
-      </form>
-
-      <!-- Search results container -->
-      <div id="searchResults" style="display:none;"></div>
-    </nav>
+  <header>
+    <h1>MEGACARTOONS</h1>
   </header>
 
-  <!-- TRENDING -->
-  <section>
-    <div class="section-title">Trending Now</div>
-    <div class="row">
-      <div class="card">
-        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
-        <div class="card-title">Movie Title</div>
-      </div>
-      <div class="card">
-        <div class="poster" style="background-image:url('https://via.placeholder.com/300x450');"></div>
-        <div class="card-title">Movie Title</div>
-      </div>
-    </div>
-  </section>
+<section class="images">
+  <a href="https://example.com">
+    <img src="https://vidcache.net:8161/static/b7533fbf8334d32ba089d83f0962d26383205be0/MV5BZTcxYzBhM2YtODM1NC00NTI2LTk1MGUtZTJiMGU5NWVmYmMwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Special Agent Oso">
+  </a>
+</section>
 
-  <!-- FOOTER -->
   <footer>
-    © 2026 StreamBox • Demo streaming platform UI<br>
-    Not affiliated with Netflix, Disney, or any real service.
+    <p>&copy; 2026 MegaCartoons. All rights reserved.</p>
   </footer>
-
-  <!-- SEARCH SCRIPT -->
-  <script>
-    const searchForm = document.getElementById("searchForm");
-    const searchBox = document.getElementById("searchBox");
-    const searchResults = document.getElementById("searchResults");
-
-    // Example list of available pages/files
-    const pages = [
-      { name: "Cartoon Network Shows", url: "/tv-shows/cartoon-network.html" },
-      { name: "Anime Favorites", url: "/tv-shows/anime.html" },
-      { name: "Pixar Movies", url: "/tv-shows/pixar.html" },
-      { name: "Disney Classics", url: "/tv-shows/disney.html" },
-      { name: "MegaCartoons Originals", url: "/tv-shows/originals.html" }
-    ];
-
-    searchForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const query = searchBox.value.trim().toLowerCase();
-      searchResults.innerHTML = "";
-
-      if (query === "") {
-        searchResults.style.display = "none";
-        return;
-      }
-
-      // Filter pages that match query
-      const matched = pages.filter(page => page.name.toLowerCase().includes(query));
-
-      if (matched.length > 0) {
-        matched.forEach(page => {
-          const p = document.createElement("p");
-          p.textContent = page.name;
-          p.onclick = () => window.open(page.url, "_blank");
-          searchResults.appendChild(p);
-        });
-      } else {
-        const p = document.createElement("p");
-        p.innerHTML = "404";
-        searchResults.appendChild(p);
-      }
-
-      searchResults.style.display = "block";
-    });
-
-    // Hide results if clicking outside
-    document.addEventListener("click", function(event) {
-      if (!searchForm.contains(event.target) && !searchResults.contains(event.target)) {
-        searchResults.style.display = "none";
-      }
-    });
-  </script>
-
 </body>
 </html>
